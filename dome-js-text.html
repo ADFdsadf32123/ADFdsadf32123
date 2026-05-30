@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS代码示例</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div id="ztt">这是一个id选择器标签</div>
+    <div class="ztt">这是一个类选择器标签</div>
+    <div>普通的div标签</div>
+    <button id="w123">点检按钮</button>
+     <script>
+        var a=document.getElementById('ztt');
+        var b=document.getElementsByClassName('ztt')[0];
+        // 由于和id不一样的是，类可能会被多个标签所使用，因此，为了存储多个值，浏览器会使用数组来存储，但是
+        // 这里只有一个值，也使用数组存储，不符合我们打印（或者使用）的需要，因此使用中括号取数组0来赋予一个
+        // 值而非一个长度为1的数组
+        var c=document.getElementsByTagName('div')[2];
+        // 因为有多个div标签，会按照顺序获取第一到第三个div的值，变为一个数组，因此取数组第三个值
+
+        var ztt=document.getElementById('w123');
+        ztt.onclick=function(){
+            alert("DOM属性出发成功");
+            ztt.innerHTML='按钮已经点击，无需重复点击'
+        }
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(ztt);
+        a.innerHTML='<a href="https://www.baidu.com">百度一下</a>'
+        b.innerText='<a href="https://www.baidu.com">百度一下</a>'
+    </script>
+</body>
+</html>
