@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5表格增改删查程序</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        tr,td,th{
+            border: 2px solid slategray;
+            text-align: center;
+            padding: 8px;
+        }
+        th {
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">HTML5基本表格程序</h1>
+    <button onclick="s1()">新建数据</button>
+    <table id="table">
+        <tr>
+            <th>姓名</th>
+            <th>联系方式</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>陈中安</td>
+            <td>asdsmla@sahd.com</td>
+            <td><button onclick="edit(this)">编辑</button><button onclick="de(this)">删除</button></td>
+        </tr>
+    </table>
+    <script src="domejs_2.js"></script>
+</body>
+</html>
