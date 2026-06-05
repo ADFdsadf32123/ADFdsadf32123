@@ -16,9 +16,7 @@
 			background-color: #FFFFFF;
 		}
     </style>
-    <script type="text/javascript" charset="utf-8">
-      	mui.init();
-    </script>
+    
 </head>
 <body>
 	<header class="mui-bar mui-bar-nav">
@@ -28,11 +26,11 @@
     <div class="mui-content">
 		<div class="mui-input-row" style="margin-top: 20px;">
 			<label>账号</label>
-			<input type="text" class="mui-input-clear" placeholder="请输入账号名">
+			<input id="name" type="text" class="mui-input-clear" placeholder="请输入账号名">
 		</div>
 		<div class="mui-input-row">
 			<label>密码t</label>
-			<input type="password" class="mui-input-password" placeholder="请输入密码">
+			<input id="pwd" type="password" class="mui-input-password" placeholder="请输入密码">
 		</div>
 		<div class="mui-input-row" style="margin-top: 20px;">
 			<label>自动登录</label>
@@ -40,7 +38,7 @@
 				<div class="mui-switch-handle"></div>
 			</div>
 		</div>
-		<div style="margin: 30px 10px;"><button type="button" class="mui-btn mui-btn-blue mui-btn-block" style="margin-top: 40px;">登录</button></div>
+		<div style="margin: 30px 10px;"><button  id="denglu" type="button" class="mui-btn mui-btn-blue mui-btn-block" style="margin-top: 40px;">登录</button></div>
 		<div style="font-weight: bold; text-align: center;">
 			<span style="color: #007AFF;">注册账号</span>
 			<span style="color: #D3D3D3">|</span>
@@ -56,4 +54,48 @@
     </div>
 
 </body>
+	<script type="text/javascript" charset="utf-8">
+      	mui.init();
+		document.getElementById("denglu").addEventListener('tap',function(){
+			var mname='';
+			var mpwd='';
+			mname=document.getElementById('name').value;
+			mpwd=document.getElementById('pwd').value;
+			if(mname==''){
+				mui.alert("请输入账号");
+				return;
+			}
+			if(mpwd==''){
+				mui.alert("请输入密码");
+				return;
+			}
+			var baseURL='http://124.93.196.45:10091';
+			var loginAPI='/prod-api/api/login';
+			mui.ajax(baseURL + loginAPI,{
+				data:{
+					"username": mname,
+					"password": mpwd
+				},
+				dataType:'json',//服务器返回json格式数据
+				type:'post',//HTTP请求类型
+				contentType: 'application/json',
+				timeout:10000,//超时时间设置为10秒；
+				success:function(data){
+					console.log(data);
+					if(data.code=200){
+						mui.alert("登录成功");
+						location.href='#';
+						return; //!
+					}
+					if(data.code=500){
+						mui.alert("登录失败");
+					}
+				},
+				error:function(xhr,type,errorThrown){
+					
+				}
+			});
+		})
+		
+    </script>
 </html>
