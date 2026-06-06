@@ -1,0 +1,134 @@
+{
+	"MUI template": {
+		"prefix": "miui",
+		"body": [
+			"<!doctype html>",
+			"<html>",
+			"",
+			"\t<head>",
+			"\t\t<meta charset=\"utf-8\">",
+			"\t\t<title></title>",
+			"\t\t<meta name=\"viewport\" content=\"width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no\" />",
+			"\t\t<link href=\"css/mui.css\" rel=\"stylesheet\" />",
+			"\t</head>",
+			"",
+			"\t<body>",
+			"\t\t<script src=\"js/mui.js\"></script>",
+			"\t\t<script type=\"text/javascript\">",
+			"\t\t\tmui.init()",
+			"\t\t</script>",
+			"\t</body>",
+			"",
+			"</html>"
+		],
+		"description": "MUI通用HTML模板"
+	},
+	"MUI Heder": {
+		"prefix": "mheader",
+		"body": [
+			"<header class=\"mui-bar mui-bar-nav\">",
+			"\t<h1 class=\"mui-title\">标题</h1>",
+			"</header>",
+		],
+		"description": "MUI标题栏"
+	},
+	"MUI Heder1": {
+		"prefix": "mheader",
+		"body": [
+			"<header class=\"mui-bar mui-bar-nav\">",
+			"\t<a class=\"mui-action-back mui-icon mui-icon-left-nav mui-pull-left\"></a>",
+			"\t<h1 class=\"mui-title\">标题</h1>",
+			"</header>"
+		],
+		"description": "MUI标题栏(带返回箭头的标题栏)"
+	},
+	// "MUI Header": {
+	// 	"prefix": "mheader",
+	// 	"body": [
+	// 		"<header class=\"mui-bar mui-bar-nav\">",
+	// 		"\t<a class=\"mui-action-back mui-icon mui-icon-left-nav mui-pull-left\"></a>",
+	// 		"\t<h1 class=\"mui-title\">${1:标题}</h1>",
+	// 		"</header>"
+	// 	],
+	// 	"description": "MUI 顶部导航栏"
+	// },
+	"MUI Content": {
+		"prefix": "mBody",
+		"body": [
+			"<div class=\"mui-content\">",
+			"\t",
+			"</div>",
+		],
+		"description": "MUI主体"
+	},
+	"MUI Bottom Tab": {
+		"prefix": "mtabbar",
+		"body": [
+			"<nav class=\"mui-bar mui-bar-tab\">",
+			"\t<a class=\"mui-tab-item mui-active\" href=\"#\">",
+			"\t\t<span class=\"mui-icon mui-icon-home\"></span>",
+			"\t\t<span class=\"mui-tab-label\">首页</span>",
+			"\t</a>",
+			"\t<a class=\"mui-tab-item\" href=\"#\">",
+			"\t\t<span class=\"mui-icon mui-icon-email\"></span>",
+			"\t\t<span class=\"mui-tab-label\">消息</span>",
+			"\t</a>",
+			"\t<a class=\"mui-tab-item\" href=\"#\">",
+			"\t\t<span class=\"mui-icon mui-icon-contact\"></span>",
+			"\t\t<span class=\"mui-tab-label\">通讯录</span>",
+			"\t</a>",
+			"\t<a class=\"mui-tab-item\" href=\"#\">",
+			"\t\t<span class=\"mui-icon mui-icon-gear\"></span>",
+			"\t\t<span class=\"mui-tab-label\">设置</span>",
+			"\t</a>",
+			"</nav>"
+		],
+		"description": "MUI底部选项卡"
+	},
+	"MUI List Item": {
+		"prefix": "mlist",
+		"body": [
+			"<ul class=\"mui-table-view\">",
+			"\t<li class=\"mui-table-view-cell\">",
+			"\t\t<a class=\"mui-navigate-right\">",
+			"\t\t\t${1:列表项}",
+			"\t\t</a>",
+			"\t</li>",
+			"</ul>"
+		],
+		"description": "MUI列表项"
+	},
+	"MUI Buttons": {
+		"prefix": "mbtn",
+		"body": [
+			"<button type=\"button\" class=\"mui-btn mui-btn-${1|blue,green,yellow,red,purple|}\">${2:按钮}</button>"
+		],
+		"description": "MUI按钮"
+	},
+	"MUI Grid View": {
+		"prefix": "mgrid",
+		"body": [
+			"<div class=\"mui-row\">",
+			"\t<div class=\"mui-col-sm-4 mui-col-xs-4\">${1}</div>",
+			"\t<div class=\"mui-col-sm-4 mui-col-xs-4\">${2}</div>",
+			"\t<div class=\"mui-col-sm-4 mui-col-xs-4\">${3}</div>",
+			"</div>"
+		],
+		"description": "MUI九宫格"
+	},
+	"MUI Card": {
+		"prefix": "mcard",
+		"body": [
+			"<div class=\"mui-card\">",
+			"\t<div class=\"mui-card-header\">${1:卡片头}</div>",
+			"\t<div class=\"mui-card-content\">",
+			"\t\t<div class=\"mui-card-content-inner\">",
+			"\t\t\t${2:内容}",
+			"\t\t</div>",
+			"\t</div>",
+			"\t<div class=\"mui-card-footer\">${3:卡片尾}</div>",
+			"</div>"
+		],
+		"description": "MUI卡片"
+	}
+}

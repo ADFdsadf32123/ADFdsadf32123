@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>登录</title>
-    <script src="js/mui.min.js"></script>
-    <link href="css/mui.min.css" rel="stylesheet"/>
-    <style>
-        .s-img{
-            width: 55px;
-            height: 55px;
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>登录</title>
+	<script src="js/mui.min.js"></script>
+	<link href="css/mui.min.css" rel="stylesheet" />
+	<style>
+		.s-img {
+			width: 55px;
+			height: 55px;
 			margin: 0px 20px;
-        }
-		.mui-input-row{
+		}
+
+		.mui-input-row {
 			background-color: #FFFFFF;
 		}
-    </style>
-    
+	</style>
+
 </head>
+
 <body>
 	<header class="mui-bar mui-bar-nav">
-        <h1 class="mui-title">XX学校管理系统</h1>
-    </header>
+		<h1 class="mui-title">XX学校管理系统</h1>
+	</header>
 
-    <div class="mui-content">
+	<div class="mui-content">
 		<div class="mui-input-row" style="margin-top: 20px;">
 			<label>账号</label>
 			<input id="name" type="text" class="mui-input-clear" placeholder="请输入账号名">
@@ -38,64 +42,66 @@
 				<div class="mui-switch-handle"></div>
 			</div>
 		</div>
-		<div style="margin: 30px 10px;"><button  id="denglu" type="button" class="mui-btn mui-btn-blue mui-btn-block" style="margin-top: 40px;">登录</button></div>
+		<div style="margin: 30px 10px;"><button id="denglu" type="button" class="mui-btn mui-btn-blue mui-btn-block"
+				style="margin-top: 40px;">登录</button></div>
 		<div style="font-weight: bold; text-align: center;">
 			<span style="color: #007AFF;">注册账号</span>
 			<span style="color: #D3D3D3">|</span>
 			<span style="color: #007AFF;">忘记密码</span>
 		</div>
-		
-		
-        <div style="display: flex;justify-content: center; position: absolute; bottom: 20px;width: 100%;">
-            <img src="img/微信.png" alt="" class="s-img">
-            <img src="img/微博.png" alt="" class="s-img">
-            <img src="img/icon_QQ.png" alt="" class="s-img">
-        </div>
-    </div>
+
+
+		<div style="display: flex;justify-content: center; position: absolute; bottom: 20px;width: 100%;">
+			<img src="img/微信.png" alt="" class="s-img">
+			<img src="img/微博.png" alt="" class="s-img">
+			<img src="img/icon_QQ.png" alt="" class="s-img">
+		</div>
+	</div>
 
 </body>
-	<script type="text/javascript" charset="utf-8">
-      	mui.init();
-		document.getElementById("denglu").addEventListener('tap',function(){
-			var mname='';
-			var mpwd='';
-			mname=document.getElementById('name').value;
-			mpwd=document.getElementById('pwd').value;
-			if(mname==''){
-				mui.alert("请输入账号");
-				return;
-			}
-			if(mpwd==''){
-				mui.alert("请输入密码");
-				return;
-			}
-			var baseURL='http://124.93.196.45:10091';
-			var loginAPI='/prod-api/api/login';
-			mui.ajax(baseURL + loginAPI,{
-				data:{
-					"username": mname,
-					"password": mpwd
-				},
-				dataType:'json',//服务器返回json格式数据
-				type:'post',//HTTP请求类型
-				contentType: 'application/json',
-				timeout:10000,//超时时间设置为10秒；
-				success:function(data){
-					console.log(data);
-					if(data.code=200){
-						mui.alert("登录成功");
-						location.href='#';
-						return; //!
-					}
-					if(data.code=500){
-						mui.alert("登录失败");
-					}
-				},
-				error:function(xhr,type,errorThrown){
-					
+<script type="text/javascript" charset="utf-8">
+	mui.init();
+	document.getElementById("denglu").addEventListener('tap', function () {
+		var mname = '';
+		var mpwd = '';
+		mname = document.getElementById('name').value;
+		mpwd = document.getElementById('pwd').value;
+		if (mname == '') {
+			mui.alert("请输入账号");
+			return;
+		}
+		if (mpwd == '') {
+			mui.alert("请输入密码");
+			return;
+		}
+		var baseURL = 'http://124.93.196.45:10091';
+		var loginAPI = '/prod-api/api/login';
+		mui.ajax(baseURL + loginAPI, {
+			data: {
+				"username": mname,
+				"password": mpwd
+			},
+			dataType: 'json',//服务器返回json格式数据
+			type: 'post',//HTTP请求类型
+			contentType: 'application/json',
+			timeout: 10000,//超时时间设置为10秒；
+			success: function (data) {
+				console.log(data);
+				if (data.code = 200) {
+					mui.alert("登录成功");
+					location.href = '#';
+					return; //!
 				}
-			});
-		})
-		
-    </script>
+				if (data.code = 500) {
+					mui.alert("登录失败");
+				}
+			},
+			error: function (xhr, type, errorThrown) {
+
+			}
+		});
+	})
+
+</script>
+
 </html>
